@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/Dimashey/data-structures-in-go/queues"
 	"github.com/Dimashey/data-structures-in-go/sets"
 )
 
@@ -36,6 +37,42 @@ func Sets() {
 	fmt.Println(set.Contains("1"))
 }
 
+func Queues() {
+	queue := queues.Queue{}
+
+	fmt.Println(queue.IsEmpty())
+
+	queue.Enqueue(1)
+	queue.Enqueue(2)
+	queue.Enqueue(3)
+
+	fmt.Println(queue.Length())
+
+	queue.Dequeue()
+
+	element, _ := queue.Peek()
+
+	fmt.Println(element)
+}
+
+func PriorityQueue() {
+	priorityQueue := queues.PriorityQueue{}
+
+	fmt.Println(priorityQueue.IsEmpty())
+
+	priorityQueue.Enqueue(1, true)
+	priorityQueue.Enqueue(2, false)
+	priorityQueue.Enqueue(3, true)
+
+	fmt.Println(priorityQueue.Lenght())
+
+	priorityQueue.Dequeue()
+
+	element, _ := priorityQueue.Peek()
+
+	fmt.Println(element)
+}
+
 func main() {
 	println("________________Array__________________")
 	Arrays()
@@ -43,4 +80,8 @@ func main() {
 	Slices()
 	println("________________Sets___________________")
 	Sets()
+	println("________________Queues_________________")
+	Queues()
+	println("________________PriorityQueue__________")
+	PriorityQueue()
 }
