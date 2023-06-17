@@ -5,6 +5,7 @@ import (
 
 	"github.com/Dimashey/data-structures-in-go/queues"
 	"github.com/Dimashey/data-structures-in-go/sets"
+	"github.com/Dimashey/data-structures-in-go/stacks"
 )
 
 func Arrays() {
@@ -73,6 +74,23 @@ func PriorityQueue() {
 	fmt.Println(element)
 }
 
+func Stacks() {
+	stack := stacks.Stack{}
+
+	fmt.Println(stack.IsEmpty())
+
+	stack.Push(1)
+	stack.Push(2)
+
+	fmt.Println(stack.Length())
+
+	elem, _ := stack.Pop()
+	fmt.Println(elem)
+
+	peek, _ := stack.Peek()
+	fmt.Println(peek)
+}
+
 func main() {
 	println("________________Array__________________")
 	Arrays()
@@ -84,4 +102,6 @@ func main() {
 	Queues()
 	println("________________PriorityQueue__________")
 	PriorityQueue()
+	println("________________Stack__________________")
+	Stacks()
 }
