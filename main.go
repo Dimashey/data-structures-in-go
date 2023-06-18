@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/Dimashey/data-structures-in-go/lists"
 	"github.com/Dimashey/data-structures-in-go/queues"
 	"github.com/Dimashey/data-structures-in-go/sets"
 	"github.com/Dimashey/data-structures-in-go/stacks"
@@ -91,6 +92,24 @@ func Stacks() {
 	fmt.Println(peek)
 }
 
+func LinkedList() {
+	linkedList := lists.LinkedList{}
+
+	linkedList.Insert("4")
+	linkedList.Insert("3")
+	linkedList.Insert("2")
+	linkedList.Insert("1")
+
+	linkedList.DeleteFirst()
+	linkedList.Delete("3")
+
+	if element := linkedList.Search("2"); element != nil {
+		fmt.Println(element)
+	}
+
+	linkedList.List()
+}
+
 func main() {
 	println("________________Array__________________")
 	Arrays()
@@ -104,4 +123,6 @@ func main() {
 	PriorityQueue()
 	println("________________Stack__________________")
 	Stacks()
+	println("________________LinkedList_____________")
+	LinkedList()
 }
